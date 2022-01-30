@@ -22,11 +22,21 @@ def joinData(df, col):
     print(str(len(df)))
     return df
 
+def updateFips(df): 
+    df['st_ansi'] = [str(i) for i in df['st_ansi']]
+    df['st_ansi'] = ['0' + i if len(i) == 1 else i for i in df['st_ansi']]
+    df['cty_ansi'] = [int(i) if str(i).lower() != 'nan' else 0 for i in df['cty_ansi']]
+    df['cty_ansi'] = [str(i) for i in df['cty_ansi']]
+    df['cty_ansi'] = ['0'*(3-len(i)) + i if len(i) != 3 else i for i in df['cty_ansi']]
+    df['fips'] = [st + '-' + cty for st, cty in zip(df['st_ansi'], df['cty_ansi'])]
+    return df
+
 def main(): 
     df = netIncome()
     for column in ['fertilizer', 'fuel', 'labor', 'land', 'machinery', 'tractors', 'trucks']: 
         print("Joining " + column)
         df = joinData(df, column)
+    df = updateFips(df)
     df.to_csv('usda_data/joined_usda_df.csv', index = None)
 
 main()
