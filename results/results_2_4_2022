@@ -1,0 +1,218 @@
+
+I had to scale the variables in this manner:
+
+y = netinc/1e6; #milions
+n = length(y);
+x_temp = ([fertilizer./1e6 fuel./1e6 labor./1e6 land./1e5 machinery./1e6 tractors trucks]);
+
+
+
+LM lag test for omitted spatial lag 
+                     
+LM value                 316.23782621 
+Marginal Probability       0.00000000 
+chi(1) .01 value           6.64000000 
+
+LM error test for spatial correlation in residuals 
+                     
+LM value                1214.52847890 
+Marginal Probability       0.00000000 
+chi(1) .01 value           6.63500000 
+
+Robust LM lag test 
+                     
+LM value                   0.10385086 
+Marginal Probability       0.74725649 
+chi(1) .01 value           6.64000000 
+
+Robust LM error test 
+                     
+LM value                 898.39450355 
+Marginal Probability       0.00000000 
+chi(1) .01 value           6.64000000 
+
+sdm: negative variances from numerical hessian 
+sdm: t-statistics may be inaccurate 
+SEM is the Null Hypothesis
+
+LR =
+
+  -5.1152e+04
+
+
+prob_spatial_lag =
+
+     1
+
+SAR is the Null Hypothesis
+
+LR =
+
+  689.2188
+
+
+prob_spatial_lag =
+
+     0
+
+
+Ordinary Least-squares Estimates 
+Dependent Variable =       netinc     
+R-squared      =    0.7843 
+Rbar-squared   =    0.7838 
+sigma^2        =  669.7982 
+Durbin-Watson  =    1.5611 
+Nobs, Nvars    =   3068,     8 
+***************************************************************
+Variable        Coefficient      t-statistic    t-probability 
+constant          -0.752300        -0.910364         0.362702 
+fertilizer        -0.324904        -2.932918         0.003383 
+fuel               3.941156        20.583605         0.000000 
+labor              0.347133        11.357552         0.000000 
+land              -3.458145        -5.699515         0.000000 
+machinery          0.383341        17.530186         0.000000 
+tractors          -0.004173        -3.376757         0.000743 
+trucks            -0.011961        -8.949370         0.000000 
+
+Wrong # of variable names in prt_reg -- check vnames argument 
+will use generic variable names 
+
+Ordinary Least-squares Estimates 
+R-squared      =    0.7925 
+Rbar-squared   =    0.7915 
+sigma^2        =  645.8639 
+Durbin-Watson  =    1.5947 
+Nobs, Nvars    =   3068,    15 
+***************************************************************
+Variable         Coefficient      t-statistic    t-probability 
+variable 1          2.450942         2.264216         0.023631 
+variable 2         -0.223464        -1.754677         0.079415 
+variable 3          3.663362        16.765043         0.000000 
+variable 4          0.384849        10.720239         0.000000 
+variable 5         -0.883179        -0.875668         0.381279 
+variable 6          0.343590        12.435320         0.000000 
+variable 7         -0.000815        -0.479459         0.631646 
+variable 8         -0.012520        -6.145746         0.000000 
+variable 9         -0.393198        -1.776485         0.075753 
+variable 10         2.789118         7.153050         0.000000 
+variable 11        -0.374463        -6.088682         0.000000 
+variable 12        -6.115799        -4.645467         0.000004 
+variable 13         0.074510         1.677549         0.093538 
+variable 14        -0.007469        -3.085362         0.002051 
+variable 15        -0.000877        -0.328278         0.742724 
+
+OLS is the Null Hypothesis
+
+fstat =
+
+   17.1995
+
+
+fprob =
+
+   1.8333e-22
+
+Wrong # of variable names in prt_sem -- check vnames argument 
+will use generic variable names 
+
+Spatial error Model Estimates 
+R-squared       =    0.8575   
+Rbar-squared    =    0.8569   
+sigma^2         =  441.2598   
+log-likelihood  =        12777.156  
+Nobs, Nvars     =   3068,    15 
+# iterations    =      0     
+min and max rho =   -0.9900,   0.9900 
+total time in secs =    0.1590 
+time for optimiz   =    0.0340 
+time for lndet     =    0.0470 
+time for t-stats   =    0.0320 
+Pace and Barry, 1999 MC lndet approximation used 
+order for MC appr  =     50  
+iter  for MC appr  =     30  
+***************************************************************
+Variable         Coefficient  Asymptot t-stat    z-probability 
+variable 1         -1.637272        -0.813081         0.416172 
+variable 2         -0.265976        -2.421092         0.015474 
+variable 3          3.637455        18.930112         0.000000 
+variable 4          0.397681        12.440729         0.000000 
+variable 5         -1.209883        -1.541494         0.123197 
+variable 6          0.346844        14.739339         0.000000 
+variable 7         -0.001297        -0.947717         0.343273 
+variable 8         -0.012016        -7.555419         0.000000 
+variable 9         -0.749493        -2.633531         0.008450 
+variable 10         2.469546         4.938270         0.000001 
+variable 11        -0.221477        -2.737883         0.006184 
+variable 12        -5.288868        -3.516436         0.000437 
+variable 13         0.141228         2.543413         0.010978 
+variable 14        -0.007314        -2.428138         0.015177 
+variable 15        -0.000905        -0.279386         0.779949 
+lambda              0.662000        10.888730         0.000000 
+
+
+## Use these results in the paper
+
+Spatial Durbin model
+Dependent Variable =       netinc     
+R-squared          =    0.7929   
+Rbar-squared       =    0.7919   
+sigma^2            =  443.1125   
+log-likelihood     =       -12776.045  
+Nobs, Nvars        =   3068,    15 
+# iterations       =     16     
+min and max rho    =   -1.0000,   1.0000 
+total time in secs =    0.3580 
+time for lndet     =    0.0310 
+time for t-stats   =    0.0310 
+time for x-impacts =    0.2800 
+# draws used       =       1000  
+Pace and Barry, 1999 MC lndet approximation used 
+order for MC appr  =     50  
+iter  for MC appr  =     30  
+***************************************************************
+Variable          Coefficient  Asymptot t-stat    z-probability 
+constant             0.557396        27.647893         0.000000 
+fertilizer          -0.169690        -0.188984         0.850105 
+fuel                 3.314176        33.213990         0.000000 
+labor                0.429868         2.402199         0.016297 
+land                -0.437795       -15.305247         0.000000 
+machinery            0.330808         0.395942         0.692147 
+tractors            -0.000207        -0.009138         0.992709 
+trucks              -0.012098        -8.593694         0.000000 
+W-fertilizer        -0.227367      -157.686060         0.000000 
+W-fuel              -0.614524        -3.350674         0.000806 
+W-labor             -0.458201        -1.347690         0.177758 
+W-land              -2.654129       -58.121943         0.000000 
+W-machinery         -0.157863        -0.144030         0.885477 
+W-tractors          -0.003619        -0.096627         0.923023 
+W-trucks             0.007235         3.602729         0.000315 
+rho                  0.648958       105.736897         0.000000 
+
+Direct            Coefficient           t-stat           t-prob         lower 01         upper 99 
+fertilizer          -0.232133        -2.084116         0.037232        -0.584811         0.031837 
+fuel                 3.577584        18.839567         0.000000         3.042465         4.034753 
+labor                0.401100        13.175600         0.000000         0.320070         0.479928 
+land                -0.942620        -1.183607         0.236660        -2.925048         1.065304 
+machinery            0.340744        15.085312         0.000000         0.281778         0.393621 
+tractors            -0.000837        -0.614444         0.538967        -0.004369         0.002666 
+trucks              -0.012231        -7.640883         0.000000        -0.016110        -0.008402 
+
+Indirect          Coefficient           t-stat           t-prob         lower 01         upper 99 
+fertilizer          -0.929561        -1.989806         0.046701        -2.152723         0.122348 
+fuel                 4.176092         4.926540         0.000001         2.070923         6.379790 
+labor               -0.483557        -3.685725         0.000232        -0.824713        -0.128983 
+land                -7.825128        -3.829925         0.000131       -13.470555        -2.520038 
+machinery            0.151793         1.687599         0.091590        -0.095681         0.415279 
+tractors            -0.009881        -2.339144         0.019392        -0.021844         0.000973 
+trucks              -0.001853        -0.428819         0.668085        -0.013278         0.009016 
+
+Total             Coefficient           t-stat           t-prob         lower 01         upper 99 
+fertilizer          -1.161694        -2.308475         0.021039        -2.464443         0.022115 
+fuel                 7.753676         8.412026         0.000000         5.431449        10.097068 
+labor               -0.082457        -0.580906         0.561347        -0.463313         0.277704 
+land                -8.767748        -4.419477         0.000010       -13.967635        -3.438537 
+machinery            0.492537         5.155639         0.000000         0.235582         0.773382 
+tractors            -0.010718        -2.443855         0.014587        -0.023207        -0.000223 
+trucks              -0.014084        -3.302016         0.000971        -0.026119        -0.004098 
+
+>> 
