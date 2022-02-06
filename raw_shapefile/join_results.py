@@ -1,6 +1,7 @@
 import geopandas as gpd
 import os, pdb
 import pandas as pd
+import numpy as np
 
 #Import shapefile and define fips. 
 sf = gpd.read_file(os.getcwd() + "\\raw_shapefile\\cb_2018_us_county_5m.shp")
@@ -17,6 +18,7 @@ df = df[keeps]
 resid = pd.read_csv(os.getcwd() + "\\results\\residuals.csv")
 df['predicted'] = resid['yhat']
 df['solow'] = df['netinc'] - df['predicted']
+df['solow'] = [np.abs(i) for i in df['solow']]
 
 # MERGE
 sf = pd.merge(sf, df, how = 'left', on = 'fips')
