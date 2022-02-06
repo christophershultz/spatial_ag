@@ -18,7 +18,7 @@ df = df[keeps]
 resid = pd.read_csv(os.getcwd() + "\\results\\residuals.csv")
 df['predicted'] = resid['yhat']
 df['solow'] = df['netinc'] - df['predicted']
-df['solow'] = [np.abs(i) for i in df['solow']]
+# df['solow'] = [np.abs(i) for i in df['solow']]
 
 # MERGE
 sf = pd.merge(sf, df, how = 'left', on = 'fips')
